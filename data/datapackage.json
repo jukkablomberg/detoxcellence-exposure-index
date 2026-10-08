@@ -1,0 +1,129 @@
+{
+  "name": "detoxcellence-exposure-index",
+  "title": "Detoxcellence Exposure Index",
+  "version": "1.2.0",
+  "created": "2026-10-07T00:00:00Z",
+  "homepage": "https://detoxcellence.com/methodology.html",
+  "description": "Everyday products and habits rated for avoidable exposure burden, with the studies behind each rating.",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0 International",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Detoxcellence",
+      "path": "https://detoxcellence.com",
+      "role": "publisher"
+    }
+  ],
+  "resources": [
+    {
+      "name": "exposures",
+      "path": "exposures.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "description": "URL slug of the entry; the page is /exposure/<id>.html."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Product or habit."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "One of Water, Air, Food, Kitchen, Plastics, Personal Care, Home, Environment."
+          },
+          {
+            "name": "context",
+            "type": "string",
+            "description": "What the entry means in practice."
+          },
+          {
+            "name": "hazard",
+            "type": "integer",
+            "description": "Editorial rating 0-10: toxicity of the associated chemical(s)."
+          },
+          {
+            "name": "exposure",
+            "type": "integer",
+            "description": "Editorial rating 0-10: how much the average person is exposed through this source."
+          },
+          {
+            "name": "persistence",
+            "type": "integer",
+            "description": "Editorial rating 0-10: how long the associated chemicals or particles linger in body and environment."
+          },
+          {
+            "name": "detox_score",
+            "type": "integer",
+            "description": "Computed: 100 - 4.6*hazard - 3.4*exposure - 2.6*persistence, rounded, kept within 1-100. Higher is lower burden."
+          },
+          {
+            "name": "band",
+            "type": "string",
+            "description": "Computed from detox_score: Minimal 80-100, Low 60-79, Moderate 40-59, High 20-39, Severe 1-19."
+          },
+          {
+            "name": "evidence_strength",
+            "type": "integer",
+            "description": "Editorial grade of the evidence, 1 emerging, 2 moderate, 3 strong. Not used in the score."
+          },
+          {
+            "name": "swap",
+            "type": "string",
+            "description": "A lower-exposure alternative, or a dash where none applies."
+          },
+          {
+            "name": "note",
+            "type": "string",
+            "description": "Plain-language context for the rating."
+          },
+          {
+            "name": "studies",
+            "type": "integer",
+            "description": "Number of studies recorded behind the ratings."
+          },
+          {
+            "name": "inputs_sourced",
+            "type": "integer",
+            "description": "How many of the three ratings (0-3) cite at least one study."
+          },
+          {
+            "name": "study_ids",
+            "type": "string",
+            "description": "Semicolon-separated identifiers (doi:... or pmid:...) of those studies; full records are in the JSON export."
+          },
+          {
+            "name": "source_urls",
+            "type": "string",
+            "description": "Semicolon-separated agency or web sources for the entry, if any."
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "description": "Page for the entry."
+          }
+        ],
+        "primaryKey": "id"
+      }
+    },
+    {
+      "name": "exposures-full",
+      "path": "exposures.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "encoding": "utf-8",
+      "description": "The source rows verbatim (including every study record and source) with a dataset-level provenance statement."
+    }
+  ]
+}
