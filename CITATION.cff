@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Detoxcellence Exposure Index"
+authors:
+  - name: "Detoxcellence"
+    website: "https://detoxcellence.com"
+version: "1.2.0"
+date-released: 2026-10-07
+license: CC-BY-4.0
+url: "https://detoxcellence.com/methodology.html"
+repository: "https://github.com/jukkablomberg/detoxcellence-exposure-index"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23175031
+    description: "Version 1.1.0 archived on Zenodo (concept DOI 10.5281/zenodo.23175030)"
+keywords:
+  - exposure
+  - consumer products
+  - PFAS
+  - open data
+abstract: "Everyday products and habits rated for avoidable exposure burden (Detox Score 1-100), with the studies behind each rating. Editorial, educational ratings: not a measured dose, not a personal risk estimate, not medical advice."
